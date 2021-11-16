@@ -1,0 +1,31 @@
+Confeccionamos una heurística basada en el algoritmo de Kruskal, para esto interpretamos que la red de caminos posibles forma un grafo conexo donde:
++ Cada ciudad es representada por un nodo del grafo. Se tienen n ciudades.
++ Cada ruta posible es representada por una arista del grafo. Se tienen al menos (n-1) rutas posibles
++ La red de rutas elegida es representada por árbol generador mínimo que resulte de la aplicación de la heurística.
+
+1) Genero un conjunto A el cual contiene las aristas del árbol generador mínimo.
+2) Genero un conjunto B el cual contiene las aristas que no han sido analizadas.
+3) Inicio el conjunto A vacío.
+4) Inicio el conjunto B con todas las aristas del grafo.
+Mientras A contenga menos de (n-1) aristas:
+    5) Elijo la arista con mínimo costo, en caso de empate se elige la última que encontró (el orden en que se encuentran depende de la implementación).
+    6) Saco del conjunto B la arista elegida.
+    7) Si la arista elegida no forma un ciclo al agregarla al conjunto A, entonces agrego la arista elegida al conjunto A.
+Fin Mientras.
+8) Se obtiene el conjunto solución con los valores del conjunto B. Fin.
+
+
+
+Pseudocode For The Kruskal Algorithm.
+E(1) is the set of the sides of the minimum genetic tree.
+E(2) is the set of the remaining sides.
+STEPS
+? E(1)=0,E(2)=E
+? While E(1) contains less then n-1 sides and E(2)=0 do
+? From the sides of E(2) choose one with minimum cost-->e(ij)
+? E(2)=E(2)-{e(ij) }
+? If V(i),V(j) do not belong in the same tree then
+? unite the trees of V(i) and V(j) to one tree.
+? end (If)
+? end (While)
+End Of Algorithm.
